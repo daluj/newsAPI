@@ -19,4 +19,21 @@ class NewsTest extends TestCase
             $this->response->getContent()
         );
     }
+
+    /**
+     * Test to check if the endpoint returns all news
+     * Endpoint: /api/news
+     * Method: GET
+     */
+    public function testGetNews()
+    {
+        $data_structure = array(
+            'data'  => ['*' => ['name','content']],
+            'message'
+        );
+
+        $this->json('GET','/api/news')
+        ->seeJsonStructure($data_structure)
+        ->seeStatusCode(200);
+    }
 }
