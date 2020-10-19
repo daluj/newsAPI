@@ -2,6 +2,8 @@
 
 ![News API](https://github.com/daluj/newsAPI/workflows/News%20API/badge.svg)
 
+REST API build with Lumen Framework
+
 ## What can I do with this API?
 With this newsAPI you can:
 - Create news about your company. Endpoint: POST {url}/api/news
