@@ -21,29 +21,59 @@ class NewsTest extends TestCase
     }
 
     /**
-     * Test to check if the endpoint returns all news
+     * Test to check if get news fails
      * Endpoint: /api/news
      * Method: GET
      */
-    public function testGetNews()
+    public function testGetNewsFails()
     {
+        $data_structure = array('error');
+
+        $this->json('GET','/api/news')
+        ->seeJsonStructure($data_structure);
+    }
+
+    /**
+     * Test to check if create news fails
+     * Endpoint: /api/news
+     * Method: POST
+     */
+    public function testCreateNewsFails()
+    {
+        $data = array(
+            'name'      => 'News 1',
+            'content'   => 'Some example content created'
+        );
+
+        $data_structure = array('error');
+        $this->json('POST','/api/news',$data)
+        ->seeJsonStructure($data_structure);
+    }
+
+    /**
+     * Test to check that the authentication is working
+     * for get news enpoint
+     */
+    public function testAuthenticationGetNews()
+    {
+        $user_token = array('Authorization' => 'Bearer usertoken');
         $data_structure = array(
             'data'  => ['*' => ['name','content']],
             'message'
         );
 
-        $this->json('GET','/api/news')
+        $this->json('GET','/api/news',[],$user_token)
         ->seeJsonStructure($data_structure)
         ->seeStatusCode(200);
     }
 
     /**
-     * Test to check if the news was created successfully
-     * Endpoint: /api/news
-     * Method: POST
+     * Test to check that the authentication is working
+     * for create news enpoint
      */
-    public function testCreateNews()
+    public function testAuthenticationCreateNews()
     {
+        $admin_token = array('Authorization' => 'Bearer admintoken');
         $data = array(
             'name'      => 'News 1',
             'content'   => 'Some example content created'
@@ -54,10 +84,28 @@ class NewsTest extends TestCase
             'message'
         );
 
-        $this->json('POST','/api/news',$data)
+        $this->json('POST','/api/news',$data,$admin_token)
         ->seeJsonStructure($data_structure)
         ->seeStatusCode(201);
 
         $this->seeInDatabase('news',$data);
+    }
+
+    public function testInvalidToken() {
+        $invalid_token = array('Authorization' => 'Bearer invalidtoken');
+        $data = array(
+            'name'      => 'News 1',
+            'content'   => 'Some example content created'
+        );
+
+        $data_structure = array('error');
+
+        $this->json('POST','/api/news',$data,$invalid_token)
+        ->seeJsonStructure($data_structure)
+        ->seeStatusCode(401);
+
+        $this->json('GET','/api/news',[],$invalid_token)
+        ->seeJsonStructure($data_structure)
+        ->seeStatusCode(401);
     }
 }
