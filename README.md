@@ -1,19 +1,27 @@
 # News API
 
-TODO: CI badge
-TODO: short description of the repository
+![News API](https://github.com/daluj/newsAPI/workflows/News%20API/badge.svg)
 
 ## What can I do with this API?
+With this newsAPI you can:
+- Create news about your company. Endpoint: POST {url}/api/news
+- Get all news created and show them to the user. GET {url}/api/news 
 
-TODO:
+### Examples
+
+Results when making a GET request to {url}/api/news:
+![alt text](postman/get_news.png)
+
+Results when making a POST request to {url}/api/news:
+![alt text](postman/create_news.png)
 
 ## Installing
 
-TODO:
+Check the [installation doc](INSTALLING.md) section
 
 ## Testing
 
-TODO:
+Check the [testing doc](TESTING.md) section
 
 ## Requirements
 
