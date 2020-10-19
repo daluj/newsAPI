@@ -2,12 +2,12 @@
 
 ![News API](https://github.com/daluj/newsAPI/workflows/News%20API/badge.svg)
 
-REST API build with Lumen Framework
+This is a simple REST API build with Lumen Framework.
 
 ## What can I do with this API?
-With this newsAPI you can:
-- Create news about your company. Endpoint: POST {url}/api/news
-- Get all news created and show them to the user. Endpoint: GET {url}/api/news 
+You can:
+- Create news by making a POST request to: {url}/api/news
+- Get all news created by making a GET request to: {url}/api/news 
 
 ### Examples
 
@@ -25,6 +25,8 @@ Check the [installation doc](INSTALLING.md) section
 
 Check the [testing doc](TESTING.md) section
 
-## Requirements
+## Technologies
 
-TODO:
+Project is created with:
+* Lumen framework version: ^8.0
+* PHP version: ^7.3
