@@ -21,11 +21,11 @@ class NewsTest extends TestCase
     }
 
     /**
-     * Test to check if the endpoint returns all news
+     * Test to check if get news fails
      * Endpoint: /api/news
      * Method: GET
      */
-    public function testGetNews()
+    public function testGetNewsFails()
     {
         $data_structure = array('error');
 
@@ -34,11 +34,11 @@ class NewsTest extends TestCase
     }
 
     /**
-     * Test to check if the news was created successfully
+     * Test to check if create news fails
      * Endpoint: /api/news
      * Method: POST
      */
-    public function testCreateNews()
+    public function testCreateNewsFails()
     {
         $data = array(
             'name'      => 'News 1',
