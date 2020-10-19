@@ -5,7 +5,7 @@
 ## What can I do with this API?
 With this newsAPI you can:
 - Create news about your company. Endpoint: POST {url}/api/news
-- Get all news created and show them to the user. GET {url}/api/news 
+- Get all news created and show them to the user. Endpoint: GET {url}/api/news 
 
 ### Examples
 
