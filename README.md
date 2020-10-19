@@ -1,4 +1,4 @@
-# Camillion API
+# News API
 
 TODO: CI badge
 TODO: short description of the repository
