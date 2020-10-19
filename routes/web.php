@@ -19,4 +19,5 @@ $router->get('/', function () use ($router) {
 
 $router->group(['prefix' => 'api'], function () use ($router) {
     $router->get('news',  ['uses' => 'NewsController@showAllNews']);
+    $router->post('news', ['uses' => 'NewsController@create']);
 });
