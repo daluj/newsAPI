@@ -23,9 +23,18 @@ $app = new Laravel\Lumen\Application(
     dirname(__DIR__)
 );
 
-// $app->withFacades();
+/**
+ * Once uncommented, this allows us to use Facades in our project.
+ * This provides a static interface to classes that are available in the
+ * application's service container.
+ */
+$app->withFacades();
 
-// $app->withEloquent();
+/**
+ * Once uncommented, Lumen hooks the Eloquent ORM with our database
+ * using the connections configured in .env file
+ */
+$app->withEloquent();
 
 /*
 |--------------------------------------------------------------------------
