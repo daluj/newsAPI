@@ -7,7 +7,7 @@
 ## How to run it
 1. Clone the repo:
 ```
-git clone https://github.com/daluj/newsAPI.git
+$ git clone https://github.com/daluj/newsAPI.git
 ```
 2. Create `.env` file by renaming `env.local` to `.env`
 3. Set up the database using database environment variables on `.env` file. 
