@@ -4,6 +4,30 @@
 * [MySQL](https://www.mysql.com/)
 * [Composer](https://getcomposer.org/)
 
+## How to run it
+1. Clone the repo:
+```
+git clone https://github.com/daluj/newsAPI.git
+```
+2. Create `.env` file by renaming `env.local` to `.env`
+3. Run the following commands to initialize project:
+```
+composer install
+```
+
+```
+php artisan migrate
+```
+
+```
+php artisan db:seed
+```
+
+```
+php artisan serve
+```
+(or you can use Laravel/Homestead or XAMPP as development environments)
+
 ## Installation with Laravel/Homestead (recommended)
 In order to set up the development environment in your local machine, [Laravel Homestead] (https://laravel.com/docs/8.x/homestead) provides a wonderful development environment without requiring to install PHP, a web server, and any other server software on your local machine. 
 

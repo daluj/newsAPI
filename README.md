@@ -13,7 +13,15 @@ Please bare in mind that the requests to both endpoints have to be authenticated
 * Authorization Bearer usertoken
 * Authorization Bearer admintoken
 
-If you want to implement a better authentication, change [authentication file](app/Http/Middleware/Authenticate.php)
+I assumed that users/admins are already logged-in and it generates a JWT in order to use this API. 
+
+If you want to implement a better authentication, feel free to change [authentication file](app/Http/Middleware/Authenticate.php)
+
+#### API Routes
+| Method | Path | Description
+| ------ |:-----|:--------- |
+| GET | /api/news | 
+| POST | /api/news | Create news
 
 ### Examples
 
@@ -33,6 +41,6 @@ Check the [testing doc](TESTING.md) section
 
 ## Technologies
 
-Project is created with:
+Project was created with:
 * Lumen framework version: ^8.0
 * PHP version: ^7.3
