@@ -10,22 +10,26 @@
 git clone https://github.com/daluj/newsAPI.git
 ```
 2. Create `.env` file by renaming `env.local` to `.env`
-3. Run the following commands to initialize project:
+3. Set up the database using database environment variables on `.env` file. 
+3. Run the following commands (on the project folder) to initialize project:
 ```
-composer install
-```
-
-```
-php artisan migrate
+$ composer install
 ```
 
 ```
-php artisan db:seed
+$ php artisan migrate
 ```
 
 ```
-php artisan serve
+$ php artisan db:seed
 ```
+
+```
+$ php -S localhost:8080 -t public
+```
+
+Check the server is running on localhost:8080.
+
 (or you can use Laravel/Homestead or XAMPP as development environments)
 
 ## Installation with Laravel/Homestead (recommended)
