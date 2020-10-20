@@ -20,7 +20,7 @@ If you want to implement a better authentication, feel free to change [authentic
 #### API Routes
 | Method | Path | Description
 | ------ |:-----|:--------- |
-| GET | /api/news | 
+| GET | /api/news | Get all the news
 | POST | /api/news | Create news
 
 ### Examples
