@@ -9,7 +9,7 @@
 ```
 $ git clone https://github.com/daluj/newsAPI.git
 ```
-2. Create `.env` file by renaming `env.local` to `.env`
+2. Create `.env` file by renaming `env.example` to `.env`
 3. Set up the database using database environment variables on `.env` file. 
 3. Run the following commands (on the project folder) to initialize project:
 ```
